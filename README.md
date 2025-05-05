@@ -54,7 +54,90 @@ This repository contains Jupyter Notebooks implementing gradient-based image pro
 
 To run these notebooks, install the following Python packages:
 
+
+
+
 ```bash
 pip install numpy opencv-python matplotlib scikit-image
 
+
+
+Focuses on training and evaluating neural network models for dog breed classification using the Stanford Dogs Dataset (SDD) and Dog Breed Images (DBI), as well as analyzing dataset bias and generalization.
+
+---
+
+## 📁 Contents & Task Mapping
+
+| Notebook | Task | Description |
+|----------|------|-------------|
+| `trainCNN.ipynb` | Task II | Training a custom CNN from scratch on DBI |
+| `restNet18-34.ipynb` | Task III (a & b) | Training ResNet18 from scratch on DBI and evaluating on SDD |
+| `Fine-Tuning.ipynb` | Task IV | Fine-tuning pre-trained ResNet18, ResNet34, and ResNeXt on DBI and testing on both datasets |
+| `classifier_train.ipynb` | Task V | Training a classifier to distinguish whether an image comes from DBI or SDD |
+
+---
+
+- Convolutional Neural Networks (CNNs)
+- Data augmentation and regularization (dropout)
+- Transfer learning & fine-tuning with PyTorch
+- Domain generalization and cross-dataset evaluation
+- Dataset bias detection
+
+---
+
+## 🧠 Implementation Highlights
+
+### `trainCNN.ipynb` – Custom CNN on DBI
+
+- A lightweight CNN was trained from scratch on the DBI dataset.
+- Techniques used:
+  - Batch normalization
+  - Dropout layers for regularization
+  - Cross-entropy loss
+  - Random cropping, flipping, and rotation for data augmentation
+- **Goal**: Observe how dropout impacts training/test accuracy and generalization.
+
+---
+
+### `restNet18-34.ipynb` – ResNet18 from Scratch
+
+- A modified ResNet18 model was trained on the DBI dataset **without pre-trained weights**.
+- Evaluation:
+  - Accuracy was plotted on training, validation, and test sets.
+  - The trained model was then tested on SDD for cross-dataset comparison.
+- **Key Concept**: Domain generalization — observing how a model trained on one dataset performs on another.
+
+---
+
+### `Fine-Tuning.ipynb` – Fine-Tuning Pre-trained Models
+
+- Models used:
+  - `ResNet18`, `ResNet34`, and `ResNeXt50_32x4d` from PyTorch Hub
+- Strategy:
+  - Fine-tune the last layers while retaining learned representations
+- Evaluation:
+  - Performance tested on DBI and full SDD
+- **Goal**: Compare generalization and overfitting across architectures
+
+---
+
+### `classifier_train.ipynb` – Dataset Classifier
+
+- Objective: Classify whether an image belongs to DBI or SDD
+- Approach:
+  - Used a pre-trained model (e.g. ResNet18) as base
+  - Trained a binary classifier on dataset identity
+- Evaluation: 
+  - Model accuracy on test set
+  - Confusion matrix and classification report
+- **Goal**: Quantify and detect dataset-specific features that affect generalization
+
+---
+
+## 🛠 Setup
+
+Make sure the following libraries are installed:
+
+```bash
+pip install torch torchvision matplotlib scikit-learn
 
