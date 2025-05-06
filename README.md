@@ -165,9 +165,9 @@ Gradient-based image analysis, with a focus on Histogram of Oriented Gradients (
 
 ## 📓 Notebook Details
 
-### 📘 `A3_q1_3.ipynb` – LoG Analysis & Gradient Visualization
+### 📘 `laplacian.ipynb` – LoG Analysis & Gradient Visualization
 
-- **Q1 Implementation**: Computes LoG response for a black square to find the optimal σ that maximizes response magnitude.
+- **Implementation**: Computes LoG response for a black square to find the optimal σ that maximizes response magnitude.
 - Uses:
   - Manual generation of black-square-on-white images
   - Laplacian of Gaussian kernel formulas
@@ -175,7 +175,7 @@ Gradient-based image analysis, with a focus on Histogram of Oriented Gradients (
 
 ---
 
-### 📘 `A3Q3_HOG.ipynb` – Local HOG Feature Descriptor
+### 📘 `local_HOG_descriptor.ipynb` – Local HOG Feature Descriptor
 
 Implements the full pipeline for extracting a **HOG descriptor** from images:
 
@@ -204,7 +204,7 @@ Implements the full pipeline for extracting a **HOG descriptor** from images:
 
 ---
 
-### 📘 `q4.ipynb` – Corner Detection with Eigenvalues
+### 📘 `cornerEdgeDetection.ipynb` – Corner Detection with Eigenvalues
 
 - Implements eigenvalue-based corner detection using the **Second Moment Matrix**.
 - Steps:
