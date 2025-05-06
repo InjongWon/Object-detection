@@ -203,6 +203,7 @@ Implements the full pipeline for extracting a **HOG descriptor** from images:
   - Files stored: `image_with_flash.txt`, `image_without_flash.txt`
 
 ---
+![Raw_img](https://github.com/user-attachments/assets/627a0e8c-6c69-4184-b32f-7fe67a90ab00)
 
 ### 📘 `cornerEdgeDetection.ipynb` – Corner Detection with Eigenvalues
 
