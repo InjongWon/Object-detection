@@ -58,8 +58,7 @@ To run these notebooks, install the following Python packages:
 
 
 ```bash
-pip install numpy opencv-python matplotlib scikit-image
-
+pip install numpy opencv-python matplotlib scikit-image```
 
 
 Focuses on training and evaluating neural network models for dog breed classification using the Stanford Dogs Dataset (SDD) and Dog Breed Images (DBI), as well as analyzing dataset bias and generalization.
