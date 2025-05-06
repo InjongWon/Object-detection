@@ -117,7 +117,7 @@ Focuses on training and evaluating neural network models for dog breed classific
   - Fine-tune the last layers while retaining learned representations
 - Evaluation:
   - Performance tested on DBI and full SDD
-- **Goal**: Compare generalization and overfitting across architectures
+- **Goal**: Compare generalization and overfitting across A!architectures
 
 ---
 
