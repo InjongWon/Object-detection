@@ -70,10 +70,10 @@ Focuses on training and evaluating neural network models for dog breed classific
 
 | Notebook | Task | Description |
 |----------|------|-------------|
-| `trainCNN.ipynb` | Task II | Training a custom CNN from scratch on DBI |
-| `restNet18-34.ipynb` | Task III (a & b) | Training ResNet18 from scratch on DBI and evaluating on SDD |
-| `Fine-Tuning.ipynb` | Task IV | Fine-tuning pre-trained ResNet18, ResNet34, and ResNeXt on DBI and testing on both datasets |
-| `classifier_train.ipynb` | Task V | Training a classifier to distinguish whether an image comes from DBI or SDD |
+| `trainCNN.ipynb` | Training a custom CNN from scratch on DBI |
+| `restNet18-34.ipynb` |Training ResNet18 from scratch on DBI and evaluating on SDD |
+| `Fine-Tuning.ipynb` | Fine-tuning pre-trained ResNet18, ResNet34, and ResNeXt on DBI and testing on both datasets |
+| `classifier_train.ipynb` |  Training a classifier to distinguish whether an image comes from DBI or SDD |
 
 ---
 
@@ -137,6 +137,93 @@ Focuses on training and evaluating neural network models for dog breed classific
 ## 🛠 Setup
 
 Make sure the following libraries are installed:
+
+Gradient-based image analysis, with a focus on Histogram of Oriented Gradients (HOG), Laplacian of Gaussian, and Harris Corner Detection techniques.
+
+---
+
+## 📁 Notebook Breakdown & Task Mapping
+
+| Notebook         | Task | Description |
+|------------------|------|-------------|
+| `laplcian.ipynb`  | Laplacian of Gaussian scale analysis + gradient visualizations |
+| `local_HOG_descriptor.ipynb` | Full implementation of Local HOG descriptor: extraction, normalization, and comparison |
+| `cornerEdgeDetection.ipynb` | Harris corner detection via Second Moment Matrix eigenvalue analysis |
+
+---
+
+## 🔍 Concepts Covered
+
+- Laplacian of Gaussian (LoG) for blob detection
+- Gradient magnitude and orientation computation
+- Histogram of Oriented Gradients (HOG) for local feature description
+- Illumination-invariant HOG normalization using L2 norm
+- Eigenvalue-based corner detection (Harris detector)
+- Comparative visualizations of gradient- and corner-based feature maps
+
+---
+
+## 📓 Notebook Details
+
+### 📘 `A3_q1_3.ipynb` – LoG Analysis & Gradient Visualization
+
+- **Q1 Implementation**: Computes LoG response for a black square to find the optimal σ that maximizes response magnitude.
+- Uses:
+  - Manual generation of black-square-on-white images
+  - Laplacian of Gaussian kernel formulas
+- Also includes gradient visualization on sample images (likely used to validate orientation detection for HOG setup).
+
+---
+
+### 📘 `A3Q3_HOG.ipynb` – Local HOG Feature Descriptor
+
+Implements the full pipeline for extracting a **HOG descriptor** from images:
+
+- **Gradient Calculation**:
+  - Computes gradient magnitudes and angles using `np.gradient` or Sobel filters.
+  - Applies thresholding to ignore low-strength gradients.
+
+- **Cell Binning**:
+  - Divides the image into fixed-size cells (e.g., 8x8).
+  - Quantizes gradient orientations into 6 bins.
+  - Two approaches implemented:
+    - **Weighted HOG**: Accumulate magnitudes per bin
+    - **Unweighted HOG**: Count pixel votes per bin
+
+- **Quiver Visualization**:
+  - Uses matplotlib’s `quiver` to draw orientations for each cell.
+
+- **Normalization**:
+  - Combines adjacent 2x2 cells into blocks
+  - L2-normalizes the resulting 24-element block vector
+  - Saves normalized descriptors as `.txt` for input images
+
+- **Illumination Robustness**:
+  - Evaluates HOG robustness to lighting by comparing with-flash vs no-flash grayscale images.
+  - Files stored: `image_with_flash.txt`, `image_without_flash.txt`
+
+---
+
+### 📘 `q4.ipynb` – Corner Detection with Eigenvalues
+
+- Implements eigenvalue-based corner detection using the **Second Moment Matrix**.
+- Steps:
+  - Computes image gradients (`Ix`, `Iy`)
+  - Constructs the structure tensor (M) for each pixel
+  - Calculates eigenvalues λ₁ and λ₂ using closed-form expressions
+  - Scatter plots of eigenvalues are generated
+  - Corners are identified where `min(λ₁, λ₂)` exceeds a chosen threshold
+  - Experiments repeated with varying Gaussian σ values to evaluate smoothing effects
+
+---
+
+## 🛠 Setup Instructions
+
+Install dependencies:
+
+```bash
+pip install numpy opencv-python matplotlib
+
 
 ```bash
 pip install torch torchvision matplotlib scikit-learn
