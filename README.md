@@ -1,5 +1,5 @@
 # Object-detection
-# Computer Vision Assignments – Gradient Analysis & Image Processing
+# Gradient Analysis & Image Processing
 
 This repository contains Jupyter Notebooks implementing gradient-based image processing techniques using Python, OpenCV, and NumPy. Each notebook corresponds to a different task focused on image gradients, edge detection, and visualization.
 
@@ -58,12 +58,13 @@ To run these notebooks, install the following Python packages:
 
 
 ```bash
-pip install numpy opencv-python matplotlib scikit-image```
+pip install numpy opencv-python matplotlib scikit-image
 
 
 Focuses on training and evaluating neural network models for dog breed classification using the Stanford Dogs Dataset (SDD) and Dog Breed Images (DBI), as well as analyzing dataset bias and generalization.
 
 ---
+```
 
 ## 📁 Contents & Task Mapping
 
