@@ -1,4 +1,4 @@
-# Object-detection
+# Neural-sense
 # Gradient Analysis & Image Processing
 
 This repository is for learning purpose with tutorials; contains Jupyter Notebooks implementing gradient-based image processing techniques using Python, OpenCV, and NumPy. Each notebook corresponds to a different task focused on image gradients, edge detection, and visualization.
